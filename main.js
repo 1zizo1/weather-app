@@ -5,7 +5,7 @@ async function searchWeather(term) {
     var response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=7d77b96c972b4d119a3151101212704&q=${term}&days=3`)
     if (response.ok && 400 != response.status) {
         let term = await response.json();
-        displayCurrent(term.location, term.current)
+        displayCurrent(term.location, term.current),
         displayforecast(term.forecast.forecastday)
         // console.log(term);
 
