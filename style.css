@@ -1,0 +1,219 @@
+:root {
+  --main-color: #009ad8;
+  --sec-color: #1e202b;
+  --grey-color: #262936;
+  --nav-color: #1e202b;
+  --card-header: #2d303d;
+  --card--body: #323544;
+  --not-found:#054861;
+}
+body,
+html {
+  background-color: var(--sec-color) !important;
+  overflow-x: hidden;
+  margin: 0;
+  color: #bfc1c8;
+  font-family: "Roboto", "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.5;
+  background: #1e202b;
+  box-sizing: border-box;
+}
+.breadcrum {
+  margin-top: 1rem;
+  background-color: var(--grey-color);
+}
+.breadcrum span {
+  padding: 0.5rem;
+}
+.collapse > .navbar-nav > .nav-item .nav-link {
+  color: #fff;
+  margin: 0.2rem;
+  padding: 0 1rem;
+  border: 2px solid transparent;
+  border-radius: 2rem;
+}
+.collapse > .navbar-nav > .nav-item .nav-link:hover {
+  color: var(--main-color);
+  border: 2px solid #009ad8;
+}
+.collapse > .navbar-nav > .nav-item > .active {
+  color: var(--main-color);
+  border: 2px solid #009ad8;
+}
+
+.tagline {
+  font-size: 0.75rem;
+  text-decoration: none;
+  color: grey;
+  margin: 0;
+}
+#hero {
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-height: 350px;
+  padding: 70px 0px;
+}
+.find-loc {
+  position: relative;
+  margin-bottom: 70px;
+}
+form > input[type="text"] {
+  background: var(--sec-color);
+  width: 100%;
+  color: #fff;
+  outline: none;
+  border: none;
+  color: white;
+  padding: 20px 50px 20px 20px;
+}
+#searchBtn,
+#findBtn {
+  position: absolute;
+  top: 5px;
+  right: 18px;
+  bottom: 5px;
+  padding: 0px 40px;
+
+}
+
+#todayCard .card {
+  color: #fff;
+  border: none;
+  margin: 0;
+  width: 100%;
+}
+#todayCard .card .card-header {
+  background-color: var(--card-header);
+}
+#todayCard .card .card-body {
+  background-color: var(--card--body);
+}
+.forecostCard{
+  display: flex;
+  flex-direction: column;
+
+}
+.forecostCard .card {
+  border: none;
+  color: #fff;
+  justify-content: space-between;
+  
+}
+
+.forecostCard .card-header {
+  background-color: #222530;
+}
+.forecostCard .card-body {
+  padding: 6.2rem 0;
+  background-color: #262936;
+}
+.cards {
+  top: 50%;
+  position: relative;
+}
+.text-grey {
+  color: #bfc1c8 !important;
+}
+.num {
+  font-size: 6.5rem;
+}
+footer {
+  /* margin-top: 5rem; */
+  /* padding: 5rem; */
+  background-color: var(--card--body);
+}
+.degree {
+  /* display: flex; */
+  align-items: center;
+}
+#weatherCard{
+  position: relative;
+  top: -125px;
+}
+footer .social-links a {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  border-radius: 50%;
+  background: #1e202b;
+  text-align: center;
+  line-height: 2;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  font-size: 20px;
+  margin: 0.35rem;
+  font-size: 1.4285714286em;
+}
+footer .social-links a i{
+  color: #009ad8;
+
+}
+footer .social-links a:hover {
+  background-color: #009ad8;
+}
+footer .social-links a:hover i{
+  color: #fff;
+}
+
+#contact input[type="text"] {
+  border: 2px solid #393c48;
+  background: transparent;
+  padding: 0.5rem;
+  border-radius: 30px;
+  outline: none;
+  color: white;
+}
+#contact textarea {
+  width: 100%;
+  padding: 0.5rem;
+  min-height: 150px;
+  border-radius: 30px;
+  outline: none;
+  color: white;
+  border: 2px solid #393c48;
+  background: transparent;
+}
+#contact textarea:focus,
+#contact input[type="text"]:focus {
+  border: 2px solid var(--main-color);
+  background-color: transparent;
+}
+#contact-details {
+  background-color: var(--grey-color);
+  border-radius: 30px;
+  height: 100%;
+  padding: 2rem;
+}
+.map{
+  height: 200px;
+  padding: 0.5rem;
+
+}
+.contact-link a{
+  text-decoration: none;
+  color: grey;  
+}
+i{
+  color: var(--not-found);
+}
+.contact-link a i{
+  color: var(--not-found);
+}
+.not-found a{
+color: var(--not-found);
+padding: 0.5rem 0;
+}
+.not-found{padding: 2rem;}
+.current-info i{
+color: grey;
+padding: 0.5rem;
+font-size: 1.7rem;
+}
+.current-info span{
+  color: gray;
+  display: flex;
+  align-items: center;
+  vertical-align: auto;
+}
