@@ -1,6 +1,5 @@
 var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-var searchBtn = document.getElementById('sreachBtn')
 async function searchWeather(term) {
     // term = "london"
     var response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=7d77b96c972b4d119a3151101212704&q=${term}&days=3`)
@@ -8,15 +7,19 @@ async function searchWeather(term) {
         let term = await response.json();
         displayCurrent(term.location, term.current)
         displayforecast(term.forecast.forecastday)
-        console.log(term);
+        // console.log(term);
 
     }
 }
 document.getElementById('search').addEventListener('keyup', function (term) {
     searchWeather(term.target.value);
-    console.log(term.target.value);
 
 })
+document.getElementById('sreachBtn').addEventListener('click', function(term){
+    searchWeather(term.target.value);
+
+})
+
 function displayCurrent(term, response) {
     if (null != response) {
         let dateofsearch = new Date(response.last_updated)
