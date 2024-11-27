@@ -2,6 +2,11 @@ var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "S
 const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 async function searchWeather(term) {
     // term = "london"
+    if ( term === 'default'){
+        document.getElementById('day').innerHTML = "<div style='text-align:center'><h3 style='color:white'>Loading ...</h3></div>";
+        term = await getUserLocation();
+    }
+
     var response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=7d77b96c972b4d119a3151101212704&q=${term}&days=3`)
     if (response.ok && 400 != response.status) {
         let term = await response.json();
@@ -15,10 +20,11 @@ document.getElementById('search').addEventListener('keyup', function (term) {
     searchWeather(term.target.value);
 
 })
-document.getElementById('sreachBtn').addEventListener('click', function(term){
+document.getElementById('searchBtn').addEventListener('click', function(term){
     searchWeather(term.target.value);
 
 })
+
 
 function displayCurrent(term, response) {
     if (null != response) {
@@ -93,4 +99,28 @@ function displayforecast(term) {
 
 };
 
-searchWeather('london');
+
+async function getUserLocation(){
+
+    var user_location = "london";
+    var user_ip_resp = await fetch("https://api.ipquery.io/");
+    if (user_ip_resp.ok) {
+        let user_ip = await user_ip_resp.text();
+        console.log(`User IP ${ user_ip }`);
+
+        var ip_details_resp = await fetch(`https://api.ipquery.io/${user_ip}`);
+
+        if ( ip_details_resp.ok ){
+
+            let ip_in_details = await ip_details_resp.json();
+            console.log(`Ip details ${ JSON.stringify(ip_in_details) }`);
+            user_location = ip_in_details.location.state;
+        };
+
+    };
+
+    return user_location;
+
+};
+
+searchWeather("default");
